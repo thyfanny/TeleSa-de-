@@ -1,0 +1,91 @@
+.voltar-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.voltar-button:hover {
+    background-color: #0056b3;
+}
+
+.visualizar-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.data-navegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: lightsteelblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.data-atual {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.consultas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.consulta-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.horario {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.paciente-info {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.entrar-button {
+    padding: 8px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.entrar-button:hover {
+    background-color: #218838;
+}
+
+.sem-consultas {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #6c757d;
+}
