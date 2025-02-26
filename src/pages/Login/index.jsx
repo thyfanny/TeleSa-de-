@@ -2,39 +2,56 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/Telesaude_logo.png';
 import './style.css';
 import api from '../../services/api';
-
+import { useState } from 'react';
 function Login() {
     const navigate = useNavigate();
+    const [email,setEmail] = useState('');
+    const [senha,setSenha] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        navigate('/main'); // Redireciona para a página Main após o login
+        try {
+            const response = await api.post('/login', {
+                email,
+                senha
+            });
+            if (response.status === 200) {
+                alert('Login realizado com sucesso!');
+                navigate('/main'); // Redireciona para a página Main após o login
+            }
+        } catch (error) {
+            alert('E-mail ou senha inválidos ou usuario ainda não validado. Por favor, tente novamente.');
+            console.error(error);
+        }
+       
     };
 
     return (
         <div className="container">
             <div className="login-section">
-                <img 
+                <img
                     src={Logo}
                 />
                 <form className="login-form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <input 
-                            type="text" 
-                            id="email" 
-                            name="email" 
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
                             placeholder="E-mail"
-                            required 
+                            required
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
 
                     <div className="form-group">
-                        <input 
-                            type="password" 
-                            id="senha" 
-                            name="senha" 
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
                             placeholder="Senha"
-                            required 
+                            required
+                            onChange={(e) => setSenha(e.target.value)}
                         />
                     </div>
 

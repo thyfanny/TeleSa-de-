@@ -93,8 +93,9 @@ function Cadastro() {
         const telefone = e.target.telefone.value;
         const senha = e.target.senha.value;
         const confirmarSenha = e.target.confirmarSenha.value;
+        const data_aniversario = e.target.data_aniversário.value;
+        const especializacao = e.target.especialidade.value;
         const crm = e.target.crm.value;
-        
         if (!validarEmail(email)) {
             return;
         }
@@ -111,7 +112,9 @@ function Cadastro() {
                 cpf,
                 telefone,
                 senha,
-                crm
+                crm,
+                data_aniversario,
+                especializacao
             });
 
             if (response.status === 201) {
